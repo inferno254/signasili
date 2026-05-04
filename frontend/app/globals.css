@@ -1,0 +1,151 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83.2% 53.3%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 48%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Accessibility - High contrast mode */
+.high-contrast {
+  --background: 0 0% 100%;
+  --foreground: 0 0% 0%;
+  --primary: 0 0% 0%;
+  --primary-foreground: 0 0% 100%;
+  --border: 0 0% 0%;
+}
+
+/* Large text mode */
+.large-text {
+  font-size: 120%;
+}
+
+/* Sign language video container */
+.ksl-video-container {
+  @apply relative aspect-video bg-black rounded-lg overflow-hidden;
+}
+
+/* Practice camera overlay */
+.practice-overlay {
+  @apply absolute inset-0 pointer-events-none;
+}
+
+/* Avatar container */
+.imara-avatar-container {
+  @apply relative w-full h-96;
+}
+
+/* Progress indicators */
+.progress-ring {
+  @apply transition-all duration-300;
+}
+
+/* Streak animation */
+@keyframes streak-pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.streak-active {
+  animation: streak-pulse 2s ease-in-out infinite;
+}
+
+/* Hand landmark visualization */
+.hand-landmark {
+  @apply absolute w-3 h-3 rounded-full transition-colors duration-200;
+}
+
+.hand-landmark.correct {
+  @apply bg-green-500;
+}
+
+.hand-landmark.adjusting {
+  @apply bg-yellow-500;
+}
+
+.hand-landmark.incorrect {
+  @apply bg-red-500;
+}
+
+/* Zone card hover effect */
+.zone-card {
+  @apply transition-all duration-300 hover:shadow-lg hover:scale-[1.02];
+}
+
+/* SLO heatmap cell */
+.slo-cell {
+  @apply w-8 h-8 rounded transition-colors duration-200;
+}
+
+.slo-cell.mastered {
+  @apply bg-green-500;
+}
+
+.slo-cell.in-progress {
+  @apply bg-yellow-500;
+}
+
+.slo-cell.not-started {
+  @apply bg-gray-200;
+}
+
+/* Loading skeleton */
+.skeleton {
+  @apply animate-pulse bg-gray-200 rounded;
+}
