@@ -19,6 +19,24 @@ from app.models.progress import (
 from app.models.bridge import (
     BridgeZone, BridgeProgress, KSLCard, KSLCardVerification
 )
+from app.models.bridge_programme import (
+    BridgeZone as BridgeProgrammeZone, BridgeProgress as BridgeProgrammeProgress,
+    KSLCard as KSLCardDetail, KSLCardVerification as KSLCardVerify,
+    ParentChildConnection, CoOpChallenge, HomeSigningGuide, BridgeAchievement
+)
+from app.models.emotional_learning import (
+    EmotionalCompetency, SELProgress, NMMExercise, NMMProgress,
+    EmotionalVocabulary, SocialScenario, ScenarioProgress
+)
+from app.models.safeguarding import (
+    DataProtectionLog, ConsentRecord, ContentReview, IncidentReport,
+    AccessibilityPreference, BiometricDataHandling, DignityCommitment,
+    TeacherObservation
+)
+from app.models.six_phase_lesson import (
+    LessonPhaseTemplate, LessonPhase, ExerciseType, LessonExercise,
+    ExerciseAttempt, LessonModuleType, HabitTracking, ZoneOfProximalDevelopment
+)
 from app.models.community import (
     CommunityCircle, CommunityCircleMember, CommunitySignDayEvent
 )
@@ -49,6 +67,37 @@ __all__ = [
     "BridgeProgress",
     "KSLCard",
     "KSLCardVerification",
+    "BridgeProgrammeZone",
+    "BridgeProgrammeProgress",
+    "KSLCardDetail",
+    "KSLCardVerify",
+    "ParentChildConnection",
+    "CoOpChallenge",
+    "HomeSigningGuide",
+    "BridgeAchievement",
+    "EmotionalCompetency",
+    "SELProgress",
+    "NMMExercise",
+    "NMMProgress",
+    "EmotionalVocabulary",
+    "SocialScenario",
+    "ScenarioProgress",
+    "DataProtectionLog",
+    "ConsentRecord",
+    "ContentReview",
+    "IncidentReport",
+    "AccessibilityPreference",
+    "BiometricDataHandling",
+    "DignityCommitment",
+    "TeacherObservation",
+    "LessonPhaseTemplate",
+    "LessonPhase",
+    "ExerciseType",
+    "LessonExercise",
+    "ExerciseAttempt",
+    "LessonModuleType",
+    "HabitTracking",
+    "ZoneOfProximalDevelopment",
     "CommunityCircle",
     "CommunityCircleMember",
     "CommunitySignDayEvent",
