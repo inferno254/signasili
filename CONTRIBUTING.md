@@ -118,7 +118,7 @@ SignAsili serves deaf and hard-of-hearing users. All contributions must consider
 
 - Open an issue for bugs
 - Start a discussion for features
-- Email: contributors@signasili.org
+- Email: <contributors@signasili.org>
 
 ## Code of Conduct
 

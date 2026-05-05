@@ -8,6 +8,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.0.0] - 2024-05-05
 
 ### Added
+
+
 - Complete KSL education platform for 600,000+ deaf Kenyans
 - FastAPI backend with 50+ API endpoints
 - Next.js 14 frontend with React 18.3
@@ -31,6 +33,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Comprehensive documentation
 
 ### Security
+
+
 - JWT tokens with 15-minute expiry
 - HTTP-only refresh cookies
 - Password strength validation
@@ -39,6 +43,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Input validation with Pydantic
 
 ### Technical
+
+
 - 75+ database tables
 - 50+ API endpoints
 - 21,105 training videos from 6 Kenyan schools
@@ -50,6 +56,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [0.9.0] - 2024-04-15
 
 ### Added
+
+
 - Initial beta release
 - Basic authentication
 - Zone and quest structure
@@ -59,6 +67,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## Future Roadmap
 
 ### [1.1.0] - Planned
+
+
 - Mobile app release (React Native)
 - Offline pack downloads
 - Advanced ML models (90%+ accuracy)
@@ -66,6 +76,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Community features expansion
 
 ### [1.2.0] - Planned
+
+
 - Integration with KNAD (Kenya National Association of the Deaf)
 - Expansion to refugee communities (Somali, Kikuyu, Luo)
 - Voice-to-sign translation
@@ -73,6 +85,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Teacher certification module
 
 ### [2.0.0] - Vision
+
+
 - Pan-African sign language support
 - ASL (American Sign Language) module
 - BSL (British Sign Language) module
