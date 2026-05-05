@@ -1,0 +1,22 @@
+# ML Training Dependencies
+tensorflow==2.16.1
+keras==3.0.0
+mediapipe==0.10.14
+numpy==1.26.4
+scikit-learn==1.5.1
+opencv-python==4.9.0.80
+pillow==10.4.0
+matplotlib==3.9.0
+seaborn==0.13.2
+pandas==2.2.2
+tqdm==4.66.4
+
+# For mT5 translation (optional, for full NLP model)
+transformers==4.41.0
+torch==2.3.0
+sentencepiece==0.2.0
+sacrebleu==2.4.0
+
+# Utilities
+pyyaml==6.0.1
+python-dotenv==1.0.1
