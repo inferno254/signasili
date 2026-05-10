@@ -1,6 +1,6 @@
 # SignAsili - Kenyan Sign Language Education Platform
 
-**Empowering 600,000+ Deaf Kenyans through Accessible Education**
+Empowering 600,000+ Deaf Kenyans through Accessible Education
 
 [![Build Status](https://github.com/inferno254/signasili/workflows/CI/badge.svg)](https://github.com/inferno254/signasili/actions)
 [![Coverage](https://codecov.io/gh/inferno254/signasili/branch/main/graph/badge.svg)](https://codecov.io/gh/inferno254/signasili)
@@ -29,7 +29,7 @@ SignAsili is a comprehensive Kenyan Sign Language (KSL) education platform desig
 ### Tech Stack
 
 | Component | Technology |
-|-----------|------------|
+|-----------|-----------|
 | **Frontend** | Next.js 14.2, React 18.3, TypeScript, Tailwind CSS |
 | **Backend** | FastAPI 0.115+, Python 3.11, PostgreSQL 15 |
 | **Mobile** | React Native 0.74+, SQLite, WatermelonDB |
@@ -40,6 +40,7 @@ SignAsili is a comprehensive Kenyan Sign Language (KSL) education platform desig
 ### Project Structure
 
 ```
+text
 signasili/
 ├── backend/              # FastAPI backend
 │   ├── app/
@@ -117,6 +118,7 @@ npm run dev
 ### 1. KSL Video Player
 
 Advanced video player with:
+
 - 10 playback speeds (0.25x - 2x)
 - Frame-by-frame analysis
 - Motion trail visualization
@@ -126,6 +128,8 @@ Advanced video player with:
 ### 2. Sign Practice Camera
 
 AI-powered practice with:
+
+
 - MediaPipe Holistic (543 keypoints)
 - Real-time accuracy scoring
 - Ghost overlay of IMARA
@@ -135,6 +139,8 @@ AI-powered practice with:
 ### 3. IMARA Avatar
 
 3D signing assistant featuring:
+
+
 - 96-bone skeletal rigging
 - 70 facial blendshapes
 - Lip-sync with visemes
@@ -144,6 +150,8 @@ AI-powered practice with:
 ### 4. Teacher Dashboard
 
 Comprehensive teaching tools:
+
+
 - SLO mastery heatmap
 - At-risk student identification
 - Intervention tracking
@@ -153,6 +161,8 @@ Comprehensive teaching tools:
 ### 5. Bridge Programme
 
 Parent learning system:
+
+
 - 6-zone progressive curriculum
 - KSL card generation
 - Co-op challenges with children
@@ -163,8 +173,9 @@ Parent learning system:
 ## API Documentation
 
 Full API documentation available at:
-- **OpenAPI/Swagger**: http://localhost:8000/docs
-- **ReDoc**: http://localhost:8000/redoc
+
+- **OpenAPI/Swagger**: <http://localhost:8000/docs>
+- **ReDoc**: <http://localhost:8000/redoc>
 
 ### Authentication
 
@@ -332,8 +343,8 @@ MIT License - see [LICENSE](LICENSE) file
 
 ## Contact
 
-- Website: https://signasili.org
-- Email: support@signasili.org
+- Website: <https://signasili.org>
+- Email: <support@signasili.org>
 - Twitter: [@SignAsili](https://twitter.com/SignAsili)
 
 ---
