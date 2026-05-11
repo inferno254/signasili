@@ -2,7 +2,7 @@
 Machine Learning API Endpoints - Sign detection, lip sync, translation
 """
 from fastapi import APIRouter, Depends, HTTPException, UploadFile, File
-from typing import List, Dict
+from typing import List, Dict, Optional
 import numpy as np
 
 router = APIRouter()

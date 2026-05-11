@@ -8,7 +8,8 @@ from sqlalchemy import func
 from app.core.database import get_db
 from app.core.security import decode_token, oauth2_scheme
 from app.models.user import User
-from app.models.learner import Learner, XPLog
+from app.models.learner import Learner
+from app.models.progress import XPLog
 from app.models.progress import LessonProgress, SLOMastery, SignMastery, StoryProgress
 from app.models.content import Lesson, Zone, Quest, Sign, Story, Badge, LearnerBadge
 from app.schemas.learner import (

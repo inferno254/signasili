@@ -1,48 +1,61 @@
 """
 SignAsili Configuration Settings
 """
-from typing import List, Optional
+from typing import List, Optional, Union
 from pydantic_settings import BaseSettings
+from pydantic import field_validator
 from functools import lru_cache
+import json
 
 
 class Settings(BaseSettings):
     """Application settings loaded from environment variables."""
-    
+
     # App Info
     APP_NAME: str = "SignAsili"
     APP_VERSION: str = "1.0.0"
     DEBUG: bool = False
-    
+
     # Database
     DATABASE_URL: str = "postgresql://signasili:password@localhost:5432/signasili"
     DATABASE_POOL_SIZE: int = 20
     DATABASE_MAX_OVERFLOW: int = 10
-    
+
     # Redis
     REDIS_URL: str = "redis://localhost:6379/0"
     REDIS_POOL_SIZE: int = 50
-    
+
     # Security
     SECRET_KEY: str = "your-secret-key-change-in-production"
     ALGORITHM: str = "HS256"
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 15
     REFRESH_TOKEN_EXPIRE_DAYS: int = 7
-    
+
     # Password Policy
     PASSWORD_MIN_LENGTH: int = 12
     PASSWORD_REQUIRE_UPPERCASE: bool = True
     PASSWORD_REQUIRE_LOWERCASE: bool = True
     PASSWORD_REQUIRE_NUMBERS: bool = True
     PASSWORD_REQUIRE_SPECIAL: bool = True
-    
+
     # CORS
-    CORS_ORIGINS: List[str] = [
+    CORS_ORIGINS: Union[str, List[str]] = [
         "http://localhost:3000",
         "https://signasili.org",
         "https://app.signasili.org",
     ]
     CORS_ALLOW_CREDENTIALS: bool = True
+
+    @field_validator("CORS_ORIGINS", mode="before")
+    @classmethod
+    def parse_cors_origins(cls, v):
+        if isinstance(v, str):
+            try:
+                return json.loads(v)
+            except json.JSONDecodeError:
+                # If not JSON, split by comma
+                return [origin.strip() for origin in v.split(",")]
+        return v
     
     # Email
     SMTP_SERVER: str = "smtp.gmail.com"

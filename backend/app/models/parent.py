@@ -1,7 +1,7 @@
 """
 Parent model - For hearing parents of deaf children
 """
-from sqlalchemy import Column, Integer, String, ForeignKey, ARRAY, JSON
+from sqlalchemy import Column, Integer, String, ForeignKey, ARRAY, JSON, Boolean
 from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy.orm import relationship
 from app.core.database import Base
@@ -48,7 +48,7 @@ class Parent(Base):
 
 class CoOpChallenge(Base):
     """Cooperative challenges between parent and child."""
-    __tablename__ = "co_op_challenges"
+    __tablename__ = "co_op_challenges_simple"
     
     id = Column(Integer, primary_key=True)
     parent_id = Column(UUID(as_uuid=True), ForeignKey("parents.user_id"), nullable=False)

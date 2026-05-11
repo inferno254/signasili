@@ -2,7 +2,7 @@
 Community models - Circles and events for deaf community
 """
 from datetime import datetime, date
-from sqlalchemy import Column, Integer, String, DateTime, Date, Text, ForeignKey, Numeric
+from sqlalchemy import Column, Integer, String, Boolean, DateTime, Date, Text, ForeignKey, Numeric
 from sqlalchemy.dialects.postgresql import UUID, ARRAY
 from sqlalchemy.orm import relationship
 from app.core.database import Base

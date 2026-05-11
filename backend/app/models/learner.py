@@ -68,7 +68,7 @@ class Learner(Base):
         today = date.today()
         if self.last_active == today:
             return  # Already active today
-        
+
         yesterday = today - date.resolution
         if self.last_active == yesterday:
             self.current_streak += 1
@@ -78,53 +78,8 @@ class Learner(Base):
                 # Save ended streak
                 pass  # Would create Streak record
             self.current_streak = 1
-        
+
         if self.current_streak > self.longest_streak:
             self.longest_streak = self.current_streak
-        
+
         self.last_active = today
-
-
-class XPLog(Base):
-    """XP transaction log for audit trail."""
-    __tablename__ = "xp_log"
-    
-    id = Column(Integer, primary_key=True)
-    learner_id = Column(UUID(as_uuid=True), ForeignKey("learners.user_id", ondelete="CASCADE"), nullable=False, index=True)
-    xp_earned = Column(Integer, nullable=False)
-    source = Column(String(100), nullable=False)  # lesson_complete, streak_bonus, sign_mastered, etc.
-    source_id = Column(String(100))
-    lesson_id = Column(Integer)
-    sign_id = Column(Integer)
-    multiplier = Column(Integer, default=1)  # XP multiplier applied
-    timestamp = Column(DateTime, default=datetime.utcnow, index=True)
-    
-    learner = relationship("Learner", back_populates="xp_logs")
-    
-    def __repr__(self):
-        return f"<XPLog {self.learner_id} +{self.xp_earned} {self.source}>"
-
-
-class Streak(Base):
-    """Historical streak records when streaks end."""
-    __tablename__ = "streaks"
-    
-    id = Column(Integer, primary_key=True)
-    learner_id = Column(UUID(as_uuid=True), ForeignKey("learners.user_id", ondelete="CASCADE"), nullable=False, index=True)
-    streak_length = Column(Integer, nullable=False)
-    ended_at = Column(Date, nullable=False)
-    reason = Column(String(100))  # missed_day, manual_reset, etc.
-    frozen_used = Column(Boolean, default=False)
-    recovery_completed = Column(Boolean, default=False)
-
-
-class StreakFreeze(Base):
-    """Streak freeze protection for learners."""
-    __tablename__ = "streak_freezes"
-    
-    id = Column(Integer, primary_key=True)
-    learner_id = Column(UUID(as_uuid=True), ForeignKey("learners.user_id", ondelete="CASCADE"), nullable=False, unique=True)
-    available_count = Column(Integer, default=1)
-    max_freezes = Column(Integer, default=3)
-    last_earned_at = Column(DateTime)
-    expires_at = Column(DateTime)

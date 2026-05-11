@@ -93,7 +93,7 @@ class ExerciseType(Base):
     Exercise types used in Phase 3 (Practice) and Phase 4 (Challenge).
     Per Foundation Framework: multiple exercise types for different learning objectives.
     """
-    __tablename__ = "exercise_types"
+    __tablename__ = "exercise_types_six_phase"
     
     id = Column(Integer, primary_key=True)
     

@@ -37,7 +37,7 @@ services:
       REDIS_URL: redis://redis:6379/0
       SECRET_KEY: ${SECRET_KEY:-dev-secret-key-change-in-production}
       DEBUG: ${DEBUG:-True}
-      CORS_ORIGINS: ${CORS_ORIGINS:-http://localhost:3000}
+      CORS_ORIGINS: '["http://localhost:3000","https://signasili.org","https://app.signasili.org"]'
     ports:
       - "8000:8000"
     volumes:

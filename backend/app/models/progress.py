@@ -131,16 +131,60 @@ class SignMastery(Base):
 class StoryProgress(Base):
     """Track story comprehension progress."""
     __tablename__ = "story_progress"
-    
+
     id = Column(Integer, primary_key=True)
     learner_id = Column(UUID(as_uuid=True), ForeignKey("learners.user_id", ondelete="CASCADE"), nullable=False, index=True)
     story_id = Column(Integer, ForeignKey("stories.id", ondelete="CASCADE"), nullable=False, index=True)
-    
+
     completed = Column(Boolean, default=False)
     score = Column(Integer)  # Comprehension score
     completed_at = Column(DateTime)
     questions_correct = Column(Integer)
     total_questions = Column(Integer)
-    
+
     def __repr__(self):
         return f"<StoryProgress {self.learner_id}:{self.story_id}>"
+
+
+class Streak(Base):
+    """Track learner learning streaks (consecutive days of practice)."""
+    __tablename__ = "streaks"
+
+    id = Column(Integer, primary_key=True)
+    learner_id = Column(UUID(as_uuid=True), ForeignKey("learners.user_id", ondelete="CASCADE"), nullable=False, index=True, unique=True)
+
+    current_streak = Column(Integer, default=0)  # Current consecutive days
+    longest_streak = Column(Integer, default=0)  # All-time best
+    last_practice_date = Column(Date)
+
+    def __repr__(self):
+        return f"<Streak learner:{self.learner_id} current:{self.current_streak}>"
+
+
+class StreakFreeze(Base):
+    """Track streak freeze items (protect streak when missing a day)."""
+    __tablename__ = "streak_freezes"
+
+    id = Column(Integer, primary_key=True)
+    learner_id = Column(UUID(as_uuid=True), ForeignKey("learners.user_id", ondelete="CASCADE"), nullable=False, index=True)
+    count = Column(Integer, default=0)  # Number of freeze items available
+
+    def __repr__(self):
+        return f"<StreakFreeze learner:{self.learner_id} count:{self.count}>"
+
+
+class XPLog(Base):
+    """Track XP (experience points) earned by learners."""
+    __tablename__ = "xp_logs"
+
+    id = Column(Integer, primary_key=True)
+    learner_id = Column(UUID(as_uuid=True), ForeignKey("learners.user_id", ondelete="CASCADE"), nullable=False, index=True)
+
+    total_xp = Column(Integer, default=0)
+    xp_earned = Column(Integer, default=0)  # XP from this entry
+    source = Column(String(50))  # lesson, sign, badge, etc.
+    source_id = Column(String(100))  # ID of the source
+    earned_at = Column(DateTime, default=datetime.utcnow)
+
+    def __repr__(self):
+        return f"<XPLog learner:{self.learner_id} +{self.xp_earned} from {self.source}>"
