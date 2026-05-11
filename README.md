@@ -318,7 +318,7 @@ We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guid
 - MFA support for teachers/admins
 - Audit logging
 
-Report security issues to security@signasili.org
+Report security issues to <security@signasili.org>
 
 ---
 
