@@ -79,6 +79,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Teacher certification module
 
 ### [2.0.0] - Vision
+
 #### Pan-African Expansion
 
 - Pan-African sign language support

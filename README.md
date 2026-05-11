@@ -39,8 +39,7 @@ SignAsili is a comprehensive Kenyan Sign Language (KSL) education platform desig
 
 ### Project Structure
 
-```
-text
+```bash
 signasili/
 ├── backend/              # FastAPI backend
 │   ├── app/
@@ -129,7 +128,6 @@ Advanced video player with:
 
 AI-powered practice with:
 
-
 - MediaPipe Holistic (543 keypoints)
 - Real-time accuracy scoring
 - Ghost overlay of IMARA
@@ -139,7 +137,6 @@ AI-powered practice with:
 ### 3. IMARA Avatar
 
 3D signing assistant featuring:
-
 
 - 96-bone skeletal rigging
 - 70 facial blendshapes
@@ -151,7 +148,6 @@ AI-powered practice with:
 
 Comprehensive teaching tools:
 
-
 - SLO mastery heatmap
 - At-risk student identification
 - Intervention tracking
@@ -161,7 +157,6 @@ Comprehensive teaching tools:
 ### 5. Bridge Programme
 
 Parent learning system:
-
 
 - 6-zone progressive curriculum
 - KSL card generation
@@ -196,6 +191,7 @@ curl -X POST http://localhost:8000/api/v1/auth/login \
 ## Database Schema
 
 75+ tables including:
+
 - Users (learners, teachers, parents, admins, EARC officers)
 - SLO Mastery tracking
 - Lesson progress
@@ -292,8 +288,8 @@ npm run test
 
 ## Monitoring
 
-- **Prometheus**: http://localhost:9090
-- **Grafana**: http://localhost:3001
+- **Prometheus**: <http://localhost:9090>
+- **Grafana**: <http://localhost:3001>
 - **Sentry**: Error tracking and performance
 
 ---
@@ -349,4 +345,4 @@ MIT License - see [LICENSE](LICENSE) file
 
 ---
 
-**Built with ❤️ for Kenya's Deaf Community**
+## Built with ❤️ for Kenya's Deaf Community
