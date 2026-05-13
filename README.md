@@ -339,8 +339,7 @@ MIT License - see [LICENSE](LICENSE) file
 
 ## Contact
 
-- Website: <https://signasili.org>
-- Email: <support@signasili.org>
+
 - Twitter: [@SignAsili](https://twitter.com/SignAsili)
 
 ---
